@@ -150,19 +150,19 @@ class GameViewController: UIViewController {
             if id1 == id2 && id1 == id3 && flag == true {
                 self.price += 25
                 self.dollarLabel.text = "$\(25)"
-                for i in 1 ... 3{
+//                for i in 1 ... 3{
                     self.addCoin()
 
-                }
+//                }
             }else if id1 == id2 || id2 == id3{
                 
                 self.price += 5
                
                 self.dollarLabel.text = "$\(5)"
-                for i in 1 ... 3{
+//                for i in 1 ... 3{
                     self.addCoin()
 
-                }
+//                }
                 
             }else{
                 if self.price < 2{
@@ -194,21 +194,18 @@ class GameViewController: UIViewController {
 }
     func addCoin(){
         view.addSubview(dollarView)
-        for i in 1 ... 5{
+//        for i in 1 ... 5{
             UIView.animate(withDuration: 1.0, delay: 0.1, options: [.curveEaseIn]) {
                 let current:CGFloat = self.dollarView.frame.minY
                 let mov:CGFloat = self.label.frame.minY
                 
-                self.dollarView.transform = CGAffineTransform(translationX: -CGFloat(i)*10, y: mov-current)
+                self.dollarView.transform = CGAffineTransform(translationX: -30, y: mov-current)
             } completion: { done in
                 self.label.text = "Price: \(self.price)"
                 self.dollarView.removeFromSuperview()
                 self.dollarView.transform = CGAffineTransform(translationX: 0, y: 0)
             }
-        }
-       
-       
-
+//        }
     }
     func alerfunc(bir:Int){
         let alert = UIAlertController(title: " UPS ! ", message: "Pulingiz tugadi iltimos hisobingizni tuldiring!", preferredStyle: .alert)
